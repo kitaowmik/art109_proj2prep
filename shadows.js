@@ -1,3 +1,5 @@
+//worked on shadows (failed), geometry, and animations
+
 import * as THREE from 'https://unpkg.com/three@0.145.0/build/three.module.js';
 
 const scene = new THREE.Scene();
@@ -34,8 +36,9 @@ camera.position.z = 20;
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene,camera);
-    mesh.rotation.x +=0.01;
+    mesh.rotation.x +=0.02;
     mesh.rotation.y +=0.01;
+    mesh.rotation.z +=0.02;
     
 }
 
