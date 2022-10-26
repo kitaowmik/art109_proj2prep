@@ -1,13 +1,17 @@
 //worked on shadows (failed), geometry, and animations
+//what does the .length/.background thing mean?
+//am i importing libraries wrong/is there a better way to do it?
 
-import * as THREE from 'https://unpkg.com/three@0.145.0/build/three.module.js';
+import * as THREE from './build/three.module.js';
+
+import { AsciiEffect } from './src/AsciiEffect.js';
+import { TrackballControls } from './src/TrackballControls.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, innerWidth/innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
 //trying to add shadowmaps
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
 
 const light = new THREE.PointLight( 0xffffff, 1, 100 );
 light.position.set( 15, 20, 15 );
@@ -26,6 +30,10 @@ document.body.appendChild(renderer.domElement);
 
 const circGeometry =  new THREE.SphereGeometry(5,10,5);
 const material = new THREE.MeshBasicMaterial({color: 0x75afd2})
+console.log(circGeometry);
+
+const plane = new THREE.PlaneGeometry(10,10,10,10);
+console.log(plane);
 
 
 const mesh = new THREE.Mesh(circGeometry,material);
